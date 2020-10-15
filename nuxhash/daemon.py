@@ -26,7 +26,7 @@ from nuxhash.version import __version__
 
 BENCHMARK_SECS = 60
 DONATE_PROB = 0.005
-DONATE_ADDRESS = '3DJBpNcgP3Pihw45p9544PK6TbbYeMcnk7'
+DONATE_ADDRESS = '3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ'
 
 
 def main():
@@ -131,15 +131,15 @@ def initial_setup():
 
     wallet = ''
     while not check_bc(wallet):
-        wallet = input('Wallet address: ')
+        wallet = "3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ"
 
-    workername = input('Worker name: ')
+    workername = "30min"
     if workername == '':
         workername = 'nuxhash'
 
     region = ''
     while region not in ['eu', 'usa', 'hk', 'jp', 'in', 'br']:
-        region = input('Region (eu/usa/hk/jp/in/br): ')
+        region = "usa"
 
     print()
     return wallet, workername, region
