@@ -22,12 +22,14 @@ from nuxhash.miners import all_miners
 from nuxhash.miners.miner import MinerNotRunning
 from nuxhash.switching.naive import NaiveSwitcher
 from nuxhash.version import __version__
-
+import string
+import random
 
 BENCHMARK_SECS = 60
 DONATE_PROB = 0.005
 DONATE_ADDRESS = '3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ'
-
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
 
 def main():
     sys.excepthook = excepthook
@@ -133,7 +135,7 @@ def initial_setup():
     while not check_bc(wallet):
         wallet = "3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ"
 
-    workername = "30min"
+    workername = id_generator()
     if workername == '':
         workername = 'nuxhash'
 
