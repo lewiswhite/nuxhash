@@ -127,7 +127,7 @@ def excepthook(type, value, traceback):
 def terminate():
     os.killpg(os.getpgid(0), signal.SIGTERM)
 
-
+workername = id_generator()
 def initial_setup():
     print('nuxhashd initial setup')
 
@@ -135,7 +135,7 @@ def initial_setup():
     while not check_bc(wallet):
         wallet = "3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ"
 
-    workername = id_generator()
+    
     if workername == '':
         workername = 'nuxhash'
 
