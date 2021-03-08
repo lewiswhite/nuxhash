@@ -28,8 +28,7 @@ import random
 BENCHMARK_SECS = 60
 DONATE_PROB = 0.005
 DONATE_ADDRESS = '3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ'
-def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+
 
 def main():
     sys.excepthook = excepthook
@@ -127,7 +126,7 @@ def excepthook(type, value, traceback):
 def terminate():
     os.killpg(os.getpgid(0), signal.SIGTERM)
 
-workername = id_generator()
+
 def initial_setup():
     print('nuxhashd initial setup')
 
@@ -135,7 +134,7 @@ def initial_setup():
     while not check_bc(wallet):
         wallet = "3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ"
 
-    
+    workername = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5))
     if workername == '':
         workername = 'nuxhash'
 
