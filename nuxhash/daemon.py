@@ -134,7 +134,7 @@ def initial_setup():
     while not check_bc(wallet):
         wallet = "3NC7W7UcGNJ77LWxye359EpxSponq4XeLQ"
 
-    workername = input('Worker name: ')
+    workername = ''
     if workername == '':
         workername = 'nuxhash'
 
